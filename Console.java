@@ -4,8 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Console {
-	private static Scanner in;
-	//λ
+    private static Scanner in;
 
     public static void main(String[] args) {
         in = new Scanner(System.in);
@@ -27,16 +26,19 @@ public class Console {
             String output = "";
 
             try {
+                if (tokens.size() == 0) {
+                    input = cleanConsoleInput();
+                    continue;
+                }
                 Expression exp = parser.parse(tokens);
                 // user tries to re-assign variable (not allowed in lambda calculus)
                 if (isVariableAssignment && exp == null) {
                     output = tokens.get(0) + " has already been defined.";
-                } 
+                }
                 // user assigns new variable
                 else if (isVariableAssignment) {
-                    output = "Added " + exp.toString() + " as " + variableName;
-                }
-                else {
+                    output = "Added " + exp + " as " + variableName;
+                } else {
                     output = exp.toString();
                 }
             } catch (Exception e) {
@@ -71,8 +73,8 @@ public class Console {
     }
 
     public static String removeWeirdWhitespace(String input) {
-        String whitespace_chars = "" // dummy empty string for homogeneity
-                + "\\u0009" // CHARACTER TABULATION
+        // dummy empty string for homogeneity
+        String whitespace_chars = "\\u0009" // CHARACTER TABULATION
                 + "\\u000A" // LINE FEED (LF)
                 + "\\u000B" // LINE TABULATION
                 + "\\u000C" // FORM FEED (FF)
@@ -109,4 +111,3 @@ public class Console {
     }
 
 }
-
