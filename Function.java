@@ -21,14 +21,14 @@ public class Function implements Expression {
         } else {
             Function func = this.copy();
             if (newExpression instanceof Variable var && Runner.freeVarNames.contains(var.name)) {
-                String newVarName = this.variable.name;
+                String newVariableName = this.variable.name;
                 int count = 0;
-                while (Runner.freeVarNames.contains(newVarName)) {
+                while (Runner.freeVarNames.contains(newVariableName)) {
                     ++count;
-                    newVarName = this.variable.name + count;
+                    newVariableName = this.variable.name + count;
                 }
-                func.variable.name = newVarName;
-                func.expression = func.expression.sub(this.variable, new Variable(newVarName));
+                func.variable.name = newVariableName;
+                func.expression = func.expression.sub(this.variable, new Variable(newVariableName));
             }
             func.expression = func.expression.sub(oldVariable, newExpression);
             return func;
