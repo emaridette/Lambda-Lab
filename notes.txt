@@ -1,11 +1,24 @@
 a. Ella Marmol & Anagha Ajesh
 
 b. For me, the lab was a 6 to 7 out of 10 in terms of difficulty. 
+It took some time for me to get familiar with writing in Java again, 
+and some steps were a bit tricky to get working, such as step 24. I did
+receive some technical (ie. getting him to install Java for me since I 
+got a new laptop in the middle of the lab, etc.)help from Jack Crowley 
+to help us get started.
 
 c. I think I worked about 5 to 6 hours on this lab, excluding class time. 
+Most of the time spent outside of class was to debug and edit code.
 
-d. Anagha and I did pair programming, and we worked together on my laptop for this (in which I would then push our code onto GitHub). I would say she spent the same amount of time as I did, maybe an hour or two less since it was my laptop we were working on.
+d. Anagha and I did pair programming, and we worked together on my laptop 
+for this, in which I would then push our code onto GitHub. I would say she 
+spent the same amount of time as I did, maybe an hour or two less since 
+it was my laptop we were working on.
 
-e. I would award myself about a 93 on this lab. This was assigned during a very busy time in BCA, especially for juniors, and I think Anagha and I were able to complete a well-functioning lab. Taking into account the work Anagha and I put into this lab outside of class, I think an A (93%) is a grade I would award myself.
+e. I would award myself about a 93 on this lab. This was assigned during a 
+very busy time in BCA, especially for juniors, and I think Anagha and I were 
+able to complete a well-functioning lab. Taking into account the work Anagha 
+and I put into this lab outside of class, I think an 93% is a grade I would 
+award myself, since not all of our is efficient as it could potentially be.
 
 f. All of the tests from the Scoring Sheet execute the correct sample output.
