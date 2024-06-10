@@ -1,0 +1,19 @@
+Inside of notes.txt, write answers to the following:
+a. Your (and your partner’s) name
+b. On a scale of 1-10, where 10 is extremely hard and 1 is
+extremely easy, how difficult was this lab for you?
+c. Estimate how many hours you worked on the lab.
+d. Estimate how many hours your partner worked on the lab. (If you
+have one.)
+e. Given what you know about (1) your output, (2) the
+circumstances you were under in your life during this period, (3)
+how hard you worked for this lab, and (4) how much your partner
+worked on this lab, what grade would you award to
+yourself?
+f. Is there anything special I should know while testing and reading
+your code? (e.g. “such and such crashes my code, but if you skip
+past these tests, you can resume here and it should work fine.”
+or “such-and-such is not as organized as I would like, but I am
+very proud of my code on this other group of functions over
+here!” or “This particular test case does run correctly, but it
+takes about 3 minutes to complete on my computer.”)
