@@ -66,7 +66,7 @@ public class Console {
      * (3) turn all weird whitespace characters into spaces,
      * and (4) replace all λs with backslashes.
      */
-
+    
     private static String cleanConsoleInput() {
         System.out.print("> ");
         String raw = in.nextLine();

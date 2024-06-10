@@ -9,6 +9,16 @@ public class Lexer {
     static final ArrayList<String> characters = new ArrayList<>(Arrays.asList("\\", ".", "(", ")", "λ", "="));
     static final String spaceString = " ";
 
+    /*
+     * A lexer (or "tokenizer") converts an input into tokens that
+     * eventually need to be interpreted.
+     *
+     * Given the input
+     * (\bat .bat flies)cat λg.joy! )
+     * you should output the ArrayList of strings
+     * [(, \, bat, ., bat, flies, ), cat, \, g, ., joy!, )]
+     *
+     */
     public ArrayList<String> tokenize(String input) {
         ArrayList<String> tokens = new ArrayList<>();
         for (int index = 0; index < input.length() && input.charAt(index) != ';';) {
