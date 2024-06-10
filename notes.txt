@@ -4,7 +4,7 @@ b. For me, the lab was a 6 to 7 out of 10 in terms of difficulty.
 It took some time for me to get familiar with writing in Java again, 
 and some steps were a bit tricky to get working, such as step 24. I did
 receive some technical (ie. getting him to install Java for me since I 
-got a new laptop in the middle of the lab, etc.)help from Jack Crowley 
+got a new laptop in the middle of the lab, etc.) help from Jack Crowley 
 to help us get started.
 
 c. I think I worked about 5 to 6 hours on this lab, excluding class time. 
