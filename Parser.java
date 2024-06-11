@@ -64,7 +64,7 @@
      }
  
      /*
-      * Main helper method for parse. Executes after the pre-parser has been called.
+      * Main helper method for parse. 
       */
  
      private Expression parseHelper(int start, int end) {
