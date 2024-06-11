@@ -35,13 +35,11 @@ public class Console {
                     input = cleanConsoleInput();
                     continue;
                 }
+
                 Expression exp = parser.parse(tokens);
-                // user tries to re-assign variable (not allowed in lambda calculus)
                 if (isVariableAssignment && exp == null) {
                     output = tokens.get(0) + " has already been defined.";
-                }
-                // user assigns new variable
-                else if (isVariableAssignment) {
+                } else if (isVariableAssignment) {
                     output = "Added " + exp + " as " + variableName;
                 } else {
                     output = exp.toString();
@@ -53,7 +51,6 @@ public class Console {
             }
 
             System.out.println(output);
-
             input = cleanConsoleInput();
         }
         System.out.println("Goodbye!");

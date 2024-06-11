@@ -1,19 +1,24 @@
-Inside of notes.txt, write answers to the following:
-a. Your (and your partner’s) name
-b. On a scale of 1-10, where 10 is extremely hard and 1 is
-extremely easy, how difficult was this lab for you?
-c. Estimate how many hours you worked on the lab.
-d. Estimate how many hours your partner worked on the lab. (If you
-have one.)
-e. Given what you know about (1) your output, (2) the
-circumstances you were under in your life during this period, (3)
-how hard you worked for this lab, and (4) how much your partner
-worked on this lab, what grade would you award to
-yourself?
-f. Is there anything special I should know while testing and reading
-your code? (e.g. “such and such crashes my code, but if you skip
-past these tests, you can resume here and it should work fine.”
-or “such-and-such is not as organized as I would like, but I am
-very proud of my code on this other group of functions over
-here!” or “This particular test case does run correctly, but it
-takes about 3 minutes to complete on my computer.”)
+a. Ella Marmol & Anagha Ajesh
+
+b. For me, the lab was a 6 to 7 out of 10 in terms of difficulty. 
+It took some time for me to get familiar with writing in Java again, 
+and some steps were a bit tricky to get working, such as step 24. I did
+receive some technical (ie. getting him to install Java for me since I 
+got a new laptop in the middle of the lab, etc.) help from Jack Crowley 
+to help us get started.
+
+c. I think I worked about 5 to 6 hours on this lab, excluding class time. 
+Most of the time spent outside of class was to debug and edit code.
+
+d. Anagha and I did pair programming, and we worked together on my laptop 
+for this, in which I would then push our code onto GitHub. I would say she 
+spent the same amount of time as I did, maybe an hour or two less since 
+it was my laptop we were working on.
+
+e. I would award myself about a 93 on this lab. This was assigned during a 
+very busy time in BCA, especially for juniors, and I think Anagha and I were 
+able to complete a well-functioning lab. Taking into account the work Anagha 
+and I put into this lab outside of class, I think an 93% is a grade I would 
+award myself, since not all of our is efficient as it could potentially be.
+
+f. All of the tests from the Scoring Sheet execute the correct sample output.

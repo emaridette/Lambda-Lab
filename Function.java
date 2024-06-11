@@ -15,22 +15,22 @@ public class Function implements Expression {
         return new Function(variable.copy(), expression.copy());
     }
 
-    public Expression sub(Variable oldVar, Expression newExp) {
-        if (this.variable.equals(oldVar)) {
+    public Expression sub(Variable oldVariable, Expression newExpression) {
+        if (this.variable.equals(oldVariable)) {
             return this;
         } else {
             Function func = this.copy();
-            if (newExp instanceof Variable var && Runner.freeVariables.contains(var.name)) {
-                String newVarName = this.variable.name;
-                int counter = 0;
-                while (Runner.freeVariables.contains(newVarName)) {
-                    ++counter;
-                    newVarName = this.variable.name + counter;
+            if (newExpression instanceof Variable var && Runner.freeVarNames.contains(var.name)) {
+                String newVariableName = this.variable.name;
+                int count = 0;
+                while (Runner.freeVarNames.contains(newVariableName)) {
+                    ++count;
+                    newVariableName = this.variable.name + count;
                 }
-                func.variable.name = newVarName;
-                func.expression = func.expression.sub(this.variable, new Variable(newVarName));
+                func.variable.name = newVariableName;
+                func.expression = func.expression.sub(this.variable, new Variable(newVariableName));
             }
-            func.expression = func.expression.sub(oldVar, newExp);
+            func.expression = func.expression.sub(oldVariable, newExpression);
             return func;
         }
     }
