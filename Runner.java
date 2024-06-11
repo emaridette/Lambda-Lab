@@ -18,25 +18,24 @@ public class Runner {
                 }
                 return funcExp.sub(var, subExp);
             } else {
-                //processing left and right of the app, respectively 
-                Expression tempSub = processExp(app.left);
-                if (tempSub != null) {
-                    app.left = tempSub;
+                //processing left and right of the app, respectively
+                Expression temp = processExp(app.left);
+                if (temp != null) {
+                    app.left = temp;
                     return app;
                 }
 
-                tempSub = processExp(app.right);
-                if (tempSub != null) {
-                    app.right = tempSub;
+                temp = processExp(app.right);
+                if (temp != null) {
+                    app.right = temp;
                     return app;
                 }
-
             }
         } else if (exp instanceof Function func) {
             //recursive function processing
-            Expression tempSub = processExp(func.expression);
-            if (tempSub != null) {
-                func.expression = tempSub;
+            Expression temp = processExp(func.expression);
+            if (temp != null) {
+                func.expression = temp;
                 return func;
             }
         }
@@ -52,9 +51,9 @@ public class Runner {
         }
 
         //check for existing in storedVariables 
-        for (String var : Parser.storedVariables.keySet()) {
-            if (exp.equals(Parser.storedVariables.get(var))) {
-                return new Variable(var);
+        for (String key : Parser.storedVariables.keySet()) {
+            if (exp.equals(Parser.storedVariables.get(key))) {
+                return new Variable(key);
             }
         }
         return exp;
