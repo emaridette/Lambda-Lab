@@ -7,7 +7,7 @@
  import java.util.HashMap;
  
  public class Parser {
-     public static final HashMap<String, Expression> storedVariables = new HashMap<>();
+     public static final HashMap<String, Expression> storedVars = new HashMap<>();
      private ArrayList<String> tokens;
  
      /*
@@ -57,8 +57,8 @@
       */
  
      private Expression variableScanner(String s) {
-         if (storedVariables.containsKey(s)) {
-             return storedVariables.get(s);
+         if (storedVars.containsKey(s)) {
+             return storedVars.get(s);
          }
          return new Variable(s);
      }
@@ -115,7 +115,7 @@
      
          if (tokens.size() >= 3 && tokens.get(1).equals("=")) {
              String key = tokens.get(0);
-             if (storedVariables.containsKey(key)) {
+             if (storedVars.containsKey(key)) {
                  return null;
              } else {
                  tokens.remove(0);
@@ -129,7 +129,7 @@
                  if (isRunning) {
                      value = Runner.run(value);
                  }
-                 storedVariables.put(key, value);
+                 storedVars.put(key, value);
                  return value;
              }
          }

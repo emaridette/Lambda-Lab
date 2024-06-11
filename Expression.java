@@ -2,7 +2,7 @@
  * Anagha Ajesh & Ella Marmol
  */
 
-public interface Expression {
+ public interface Expression {
     Expression copy();
 
     Expression sub(Variable v, Expression e);

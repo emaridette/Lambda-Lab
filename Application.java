@@ -2,7 +2,7 @@
  * Anagha Ajesh & Ella Marmol
  */
 
-public class Application implements Expression {
+ public class Application implements Expression {
     public Expression left;
     public Expression right;
 

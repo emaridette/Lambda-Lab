@@ -2,7 +2,7 @@
  * Anagha Ajesh & Ella Marmol
  */
 
-public class Variable implements Expression {
+ public class Variable implements Expression {
     public String name;
 
     public Variable(String name) {

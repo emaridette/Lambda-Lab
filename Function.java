@@ -2,7 +2,7 @@
  * Anagha Ajesh & Ella Marmol
  */
 
-public class Function implements Expression {
+ public class Function implements Expression {
     public Variable variable;
     public Expression expression;
 
