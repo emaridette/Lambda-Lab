@@ -5,37 +5,34 @@
 import java.util.HashSet;
 
 public class Runner {
-    public static final HashSet<String> freeVariables = new HashSet<>();
+    public static final HashSet<String> freeVarNames = new HashSet<>();
 
-    private static Expression processExp(Expression exp) {
+    private static Expression runHelper(Expression exp) {
         if (exp instanceof Application app) {
             if (app.left instanceof Function func) {
                 Variable var = func.variable;
                 Expression funcExp = func.expression;
                 Expression subExp = app.right.copy();
                 if (subExp instanceof Variable freeVar) {
-                    freeVariables.add(freeVar.name);
+                    freeVarNames.add(freeVar.name);
                 }
                 return funcExp.sub(var, subExp);
             } else {
-                //processing left and right of the app, respectively 
-                Expression tempSub = processExp(app.left);
-                if (tempSub != null) {
-                    app.left = tempSub;
+                Expression temp = runHelper(app.left);
+                if (temp != null) {
+                    app.left = temp;
                     return app;
-                } 
-                tempSub = processExp(app.right);
-                if (tempSub != null) {
-                    app.right = tempSub;
-                    return app; 
                 }
-
+                temp = runHelper(app.right);
+                if (temp != null) {
+                    app.right = temp;
+                    return app;
+                }
             }
         } else if (exp instanceof Function func) {
-            //recursive function processing
-            Expression tempSub = processExp(func.expression);
-            if (tempSub != null) {
-                func.expression = tempSub;
+            Expression temp = runHelper(func.expression);
+            if (temp != null) {
+                func.expression = temp;
                 return func;
             }
         }
@@ -43,15 +40,17 @@ public class Runner {
     }
 
     public static Expression run(Expression exp) {
-        freeVariables.clear();
-        Expression subExp = processExp(exp);
+        freeVarNames.clear();
+        Expression subExp = runHelper(exp);
         while (subExp != null) {
             exp = subExp;
-            subExp = processExp(exp);
+            subExp = runHelper(exp);
         }
-
-        //check for existing in storedVariables 
+        // compare this expression against everything in stored variables. If this
+        // evaluates to an expression that is identical to a stored variable, just
+        // return that variable
         for (String key : Parser.storedVariables.keySet()) {
+
             if (exp.equals(Parser.storedVariables.get(key))) {
                 return new Variable(key);
             }

@@ -20,10 +20,10 @@ public class Function implements Expression {
             return this;
         } else {
             Function func = this.copy();
-            if (newExpression instanceof Variable var && Runner.freeVariables.contains(var.name)) {
+            if (newExpression instanceof Variable var && Runner.freeVarNames.contains(var.name)) {
                 String newVariableName = this.variable.name;
                 int count = 0;
-                while (Runner.freeVariables.contains(newVariableName)) {
+                while (Runner.freeVarNames.contains(newVariableName)) {
                     ++count;
                     newVariableName = this.variable.name + count;
                 }
