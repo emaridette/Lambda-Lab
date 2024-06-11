@@ -7,7 +7,7 @@ receive some technical (ie. getting him to install Java for me since I
 got a new laptop in the middle of the lab, etc.) help from Jack Crowley 
 to help us get started.
 
-c. I think I worked about 5 to 6 hours on this lab, excluding class time. 
+c. I think I worked about 6 to 7 hours on this lab, excluding class time. 
 Most of the time spent outside of class was to debug and edit code.
 
 d. Anagha and I did pair programming, and we worked together on my laptop 
