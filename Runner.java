@@ -27,6 +27,15 @@ public class Runner {
                 if (temp != null) {
                     app.right = temp;
                     return app;
+<<<<<<< HEAD
+=======
+                } else {
+                    tempSub = processExp(app.right);
+                    if (tempSub != null) {
+                        app.right = tempSub;
+                        return app;
+                    }
+>>>>>>> parent of c751b6e (stuff)
                 }
             }
         } else if (exp instanceof Function func) {
@@ -46,6 +55,7 @@ public class Runner {
             exp = subExp;
             subExp = runHelper(exp);
         }
+<<<<<<< HEAD
         // compare this expression against everything in stored variables. If this
         // evaluates to an expression that is identical to a stored variable, just
         // return that variable
@@ -53,6 +63,13 @@ public class Runner {
 
             if (exp.equals(Parser.storedVariables.get(key))) {
                 return new Variable(key);
+=======
+
+        //check for existing in storedVariables 
+        for (String var : Parser.storedVariables.keySet()) {
+            if (exp.equals(Parser.storedVariables.get(var))) {
+                return new Variable(var);
+>>>>>>> parent of c751b6e (stuff)
             }
         }
         return exp;
