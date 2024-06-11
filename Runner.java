@@ -18,11 +18,13 @@ public class Runner {
                 }
                 return funcExp.sub(var, subExp);
             } else {
+                //processing left and right of the app, respectively 
                 Expression temp = processExp(app.left);
                 if (temp != null) {
                     app.left = temp;
                     return app;
                 }
+
                 temp = processExp(app.right);
                 if (temp != null) {
                     app.right = temp;
@@ -30,6 +32,7 @@ public class Runner {
                 }
             }
         } else if (exp instanceof Function func) {
+            //recursive function processing
             Expression temp = processExp(func.expression);
             if (temp != null) {
                 func.expression = temp;
@@ -46,9 +49,8 @@ public class Runner {
             exp = subExp;
             subExp = processExp(exp);
         }
-        // compare this expression against everything in stored variables. If this
-        // evaluates to an expression that is identical to a stored variable, just
-        // return that variable
+
+        //check for existing in storedVariables 
         for (String key : Parser.storedVariables.keySet()) {
             if (exp.equals(Parser.storedVariables.get(key))) {
                 return new Variable(key);

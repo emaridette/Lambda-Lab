@@ -20,27 +20,35 @@ public class Lexer {
      *
      */
     public ArrayList<String> tokenize(String input) {
+
+        //tokenlist
         ArrayList<String> tokens = new ArrayList<>();
-        for (int index = 0; index < input.length() && input.charAt(index) != ';';) {
-            String current = input.substring(index, index + 1);
-            if (current.equals(";")) {
+
+        //traverse the input
+        for (int i = 0; i < input.length() && input.charAt(i) != ';';) {
+            String currentChar = input.substring(i, i + 1);
+
+            
+            if (currentChar.equals(";")) {
                 break;
-            } else if (current.equals(spaceString)) {
-                ++index;
-            } else if (characters.contains(current)) {
-                if (current.equals("λ")) {
+            } else if (currentChar.equals(spaceString)) {
+                //skip spaces
+                ++i;
+            } else if (characters.contains(currentChar)) {
+                //check for special characters
+                if (currentChar.equals("λ")) {
                     tokens.add("\\");
                 } else {
-                   tokens.add(current);
+                   tokens.add(currentChar);
                 }
-                ++index;
+                ++i;
             } else {
-                int start = index;
-                while (!(index == input.length() || input.charAt(index) == ' '
-                        || characters.contains(input.substring(index, index + 1)))) {
-                    ++index;
+                int start = i;
+                while (!(i == input.length() || input.charAt(i) == ' '
+                        || characters.contains(input.substring(i, i + 1)))) {
+                    ++i;
                 }
-                tokens.add(input.substring(start, index));
+                tokens.add(input.substring(start, i));
             }
         }
         return tokens;

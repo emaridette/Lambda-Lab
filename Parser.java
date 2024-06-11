@@ -57,8 +57,8 @@ public class Parser {
      */
 
     private Expression variableScanner(String s) {
-        if (storedVars.containsKey(s)) {
-            return storedVars.get(s);
+        if (storedVariables.containsKey(s)) {
+            return storedVariables.get(s);
         }
         return new Variable(s);
     }
@@ -115,7 +115,7 @@ public class Parser {
     
         if (tokens.size() >= 3 && tokens.get(1).equals("=")) {
             String key = tokens.get(0);
-            if (storedVars.containsKey(key)) {
+            if (storedVariables.containsKey(key)) {
                 return null;
             } else {
                 tokens.remove(0);
