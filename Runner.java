@@ -23,12 +23,12 @@ public class Runner {
                 if (tempSub != null) {
                     app.left = tempSub;
                     return app;
-                } else {
-                    tempSub = processExp(app.right);
-                    if (tempSub != null) {
-                        app.right = tempSub;
-                        return app;
-                    }
+                }
+
+                tempSub = processExp(app.right);
+                if (tempSub != null) {
+                    app.right = tempSub;
+                    return app;
                 }
 
             }
