@@ -23,12 +23,11 @@ public class Runner {
                 if (tempSub != null) {
                     app.left = tempSub;
                     return app;
-                } else {
-                    tempSub = processExp(app.right);
-                    if (tempSub != null) {
-                        app.right = tempSub;
-                        return app;
-                    }
+                } 
+                tempSub = processExp(app.right);
+                if (tempSub != null) {
+                    app.right = tempSub;
+                    return app; 
                 }
 
             }
@@ -52,9 +51,9 @@ public class Runner {
         }
 
         //check for existing in storedVariables 
-        for (String var : Parser.storedVariables.keySet()) {
-            if (exp.equals(Parser.storedVariables.get(var))) {
-                return new Variable(var);
+        for (String key : Parser.storedVariables.keySet()) {
+            if (exp.equals(Parser.storedVariables.get(key))) {
+                return new Variable(key);
             }
         }
         return exp;
